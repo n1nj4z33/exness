@@ -10,13 +10,13 @@ def pytest_runtest_makereport(item, call):  # pylint: disable=unused-argument
     outcome = yield
     report = outcome.get_result()
     extra = getattr(report, "extra", [])
-    driver = DriverManager()
+    driver_manager = DriverManager()
     xfail = hasattr(report, "wasxfail")
 
     if report.when == "call":
-        extra.append(pytest_html.extras.url(driver.instance.current_url))
+        extra.append(pytest_html.extras.url(driver_manager.driver.current_url))
         if (report.skipped and xfail) or (report.failed and not xfail):
             extra.append(pytest_html.extras.html("<div>Additional HTML</div>"))
-            screenshot = driver.instance.get_screenshot_as_base64()
+            screenshot = driver_manager.driver.get_screenshot_as_base64()
             extra.append(pytest_html.extras.image(screenshot, "Screenshot"))
         report.extra = extra

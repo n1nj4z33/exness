@@ -11,7 +11,7 @@ class BaseElement(object):
         """
         :param locator: The element locator.
         """
-        self.driver = DriverManager().driver
+        self.driver_manager = DriverManager()
         self.locator = locator
 
     @property
@@ -30,6 +30,6 @@ class BaseElement(object):
         :raises: AssertionError if can not find element.
         """
         try:
-            return self.driver.find_element_by_xpath(self.locator)
+            return self.driver_manager.driver.find_element_by_xpath(self.locator)
         except NoSuchElementException:
             assert 0, "No such element '{}'.".format(self.locator)

@@ -209,21 +209,23 @@ class CalculatorPage(BasePage):
     @property
     def expected_results(self):
         """Property to get expected results."""
-        return ("{} {}".format(self.calculate_margin(), self.currency),
-                "{} {}".format(self.calculate_profit(), self.currency),
-                "{} pt. = {} {}".format(self._swap_long_size,
-                                        self.calculate_swap_long(),
-                                        self.currency),
-                "{} pt. = {} {}".format(self._swap_short_size,
-                                        self.calculate_swap_short(),
-                                        self.currency),
-                "{}".format(self.calculate_volume()))
+        return ("{} {}".format(self.calculate_margin(), self.currency))
+        # TODO: Not implemented.
+        # "{} {}".format(self.calculate_profit(), self.currency),
+        # "{} pt. = {} {}".format(self._swap_long_size,
+        #                         self.calculate_swap_long(),
+        #                         self.currency),
+        # "{} pt. = {} {}".format(self._swap_short_size,
+        #                         self.calculate_swap_short(),
+        #                         self.currency),
+        # "{}".format(self.calculate_volume()))
 
     @property
     def results(self):
         """Property to get results."""
-        return (self.margin,
-                self.profit,
-                self.swap_long,
-                self.swap_short,
-                self.volume)
+        return (self.margin)
+        # TODO: Not implemented.
+        # self.profit,
+        # self.swap_long,
+        # self.swap_short,
+        # self.volume)
