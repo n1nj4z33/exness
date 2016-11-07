@@ -33,6 +33,7 @@ class DriverManager(object):
         options.add_argument("--disable-default-apps")
         self._driver = webdriver.Chrome(chrome_options=options)
         self._driver.implicitly_wait(10)
+        self._driver.maximize_window()
         return self._driver
 
     def stop(self):
