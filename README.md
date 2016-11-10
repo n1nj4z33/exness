@@ -1,3 +1,6 @@
+[![Code Health](https://landscape.io/github/n1nj4z33/exness/master/landscape.svg?style=flat)](https://landscape.io/github/n1nj4z33/exness/master)
+
+
 ### Dependencies:
 + ChromeDriver>=2.25 (https://sites.google.com/a/chromium.org/chromedriver)
 + Python>=2.7.8 (https://www.python.org/downloads)
